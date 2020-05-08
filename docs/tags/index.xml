@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on inteligência das coisas</title>
+    <link>https://alexandremendoncaalvaro.github.io/blog/tags/</link>
+    <description>Recent content in Tags on inteligência das coisas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://alexandremendoncaalvaro.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>animações</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/anima%C3%A7%C3%B5es/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/anima%C3%A7%C3%B5es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>greensock</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/greensock/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/greensock/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iniciante</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/iniciante/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/iniciante/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interativo</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/interativo/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/interativo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/javascript/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svg</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/svg/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/svg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/tutorial/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://alexandremendoncaalvaro.github.io/blog/tags/web/</link>
+      <pubDate>Mon, 04 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://alexandremendoncaalvaro.github.io/blog/tags/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

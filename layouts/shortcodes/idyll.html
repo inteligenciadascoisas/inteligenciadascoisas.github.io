@@ -1,0 +1,14 @@
+<div id="idyllElement"></div>
+
+{{ with "js/idyll-embed.min.js" }}
+<script src="{{ . | relURL }}"></script>
+{{ end }}
+
+<script>
+    var element = document.createElement('div');
+    document.querySelector("#idyllElement").appendChild(element);
+
+    var idyllMarkup = {{.Inner}};
+
+    Idyll.render(idyllMarkup, element);
+</script>

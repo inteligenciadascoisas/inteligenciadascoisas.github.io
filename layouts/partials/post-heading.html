@@ -1,0 +1,38 @@
+<div class="tags">
+  {{ range .Params.tags }}
+  <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
+    {{ . }}
+  </a>
+  {{ end }}
+</div>
+<h1>{{ .Title }}</h1>
+<h2 class="subheading">{{ .Params.subtitle }}</h2>
+{{ if ne .Params.showpagemeta false }}
+<div class="post__meta tags">
+  {{ if .Params.author }}
+  {{ .Params.author }}
+  {{ else }}
+  {{ .Site.Title }}
+  {{ end }}
+  |
+  <!-- published date -->
+  {{ if not .Date.IsZero }}
+  {{ partial "date-pt" .Date }}
+  {{ end }}
+  <!-- categories -->
+  {{ with .Params.categories }}
+  {{ $total := len . }}
+  {{ if gt $total 0 }}
+  em
+  {{ $total := sub $total 1 }}
+  {{ range $i, $cat := sort . }}
+  <a class="tag" href="{{ "/categories/" | relURL }}{{ $cat | urlize }}">{{ $cat | upper }}</a>
+  {{ if lt $i $total }}•{{ end }}
+  {{ end }}
+  {{ end }}
+  {{ end }}
+
+  <br />
+  <i class="fa fa-clock-o"></i> {{ .ReadingTime }} min de leitura
+</div>
+{{ end }}

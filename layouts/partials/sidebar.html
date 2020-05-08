@@ -1,0 +1,288 @@
+<!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    <section class="visible-md visible-lg">
+        <hr>
+        <h5><a href="{{ "https://alexandremendoncaalvaro.github.io/blog" | relLangURL }}">SOBRE O BLOG</a></h5>
+        <div class="short-about">
+            {{ with .Site.Params.mascot }}
+            <img src="{{ . | relURL }}" alt="ia" style="width: 60%;" />
+            {{ end }}
+            <b>{{ .Site.Params.SEOTitle }}</b>
+            {{ with .Site.Params.description }}
+            <p>{{ . }}</p>
+            {{ end }}
+        </div>
+    </section>
+
+    <!-- Featured Tags -->
+    {{ if .Site.Params.featured_tags }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>TAGS EM DESTAQUE</h5>
+        <div class="tags">
+            {{ $featured_condition_size := .Site.Params.featured_condition_size }}
+            {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            {{ if gt (len $taxonomy.Pages) $featured_condition_size }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" title="{{ $name }}">
+                {{ $name }}
+            </a>
+            {{ end }}
+            {{ end }}
+        </div>
+    </section>
+    {{ end }}
+
+    <!-- Short About -->
+    {{ if .Site.Params.about_me }}
+    <section class="visible-md visible-lg">
+        <hr>
+        <h5><a href="{{ "https://alexandremendoncaalvaro.github.io/" | relLangURL }}">SOBRE MIM</a></h5>
+        <div class="short-about">
+            {{ with .Site.Params.sidebar_avatar }}
+            <a href="{{ "https://alexandremendoncaalvaro.github.io/" | relLangURL }}">
+                <img src="{{ . | relURL }}" alt="avatar" style="cursor: pointer" />
+            </a>
+            {{ end }}
+            {{ with .Site.Params.sidebar_about_description }}
+            <p>{{ . }}</p>
+            {{ end }}
+            <!-- SNS Link -->
+            <ul class="list-inline">
+                {{ if .Site.Params.social.rss }}
+                <li>
+                    <a href='{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}' rel="alternate"
+                        type="application/rss+xml" title="{{ .Site.Title | default "" }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.resume }}
+                <li>
+                    <a href='{{ . }}' title="Resume/ Portifolio" target="_blank">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.email }}
+                <li>
+                    <a href="mailto:{{ . }}" title="e-mail">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+
+                {{ with .Site.Params.social.twitter }}
+                <li>
+                    <a href="{{ . }}" title="Twitter">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.facebook }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Facebook">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.github }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Github">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.gitlab }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.git }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-git fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.linkedin }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Linkedin">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.medium }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-medium fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.stackoverflow }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.reddit }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-reddit fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.mastodon }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-mastodon fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.keybase }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-keybase fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.xing }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-xing fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.instagram }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Instagram">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.flickr }}
+                <li>
+                    <a target="_blank" href="{{ . }}">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-flickr fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.deviantart }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="DeviantArt">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-deviantart fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.soundcloud }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Soundcloud">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-soundcloud fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+                {{ with .Site.Params.social.whatsapp }}
+                <li>
+                    <a target="_blank" href="{{ . }}" title="Whatsapp">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-whatsapp fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </section>
+    {{ end }}
+    <!-- Friends Blog -->
+    {{ if .Site.Params.friends }}
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+            {{ range .Site.Params.friend_link }}
+            <li><a target="_blank" href="{{.href | relLangURL}}">{{.title}}</a></li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
+    <!-- Bookmarks -->
+    {{ if .Site.Params.bookmarks }}
+    <section>
+        <hr>
+        <h5>BOOKMARKS</h5>
+        <ul class="list-inline">
+            {{ range .Site.Params.bookmark_link }}
+            <li><a target="_blank" href="{{.href | relLangURL}}">{{.title}}</a></li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+</div>

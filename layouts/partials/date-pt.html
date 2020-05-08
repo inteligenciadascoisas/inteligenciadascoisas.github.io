@@ -1,0 +1,55 @@
+{{ .Format "02" }}
+
+{{ " de " }}
+
+{{ with .Format "01"}}
+  {{ if eq . "01" }}
+    {{ "Janeiro, " }}
+  {{ end }}
+
+  {{ if eq . "02" }}
+    {{ "Fevereiro, " }}
+  {{ end }}
+
+  {{ if eq . "03" }}
+    {{ "Março, " }}
+  {{ end }}
+
+  {{ if eq . "04" }}
+    {{ "Abril, " }}
+  {{ end }}
+
+  {{ if eq . "05" }}
+    {{ "Maio, " }}
+  {{ end }}
+
+  {{ if eq . "06" }}
+    {{ "Junho, " }}
+  {{ end }}
+
+  {{ if eq . "07" }}
+    {{ "Julho, " }}
+  {{ end }}
+
+  {{ if eq . "08" }}
+    {{ "Agosto, " }}
+  {{ end }}
+
+  {{ if eq . "09" }}
+    {{ "Setembro, " }}
+  {{ end }}
+
+  {{ if eq . "10" }}
+    {{ "Outubro, " }}
+  {{ end }}
+
+  {{ if eq . "11" }}
+    {{ "Novembro, " }}
+  {{ end }}
+
+  {{ if eq . "12" }}
+    {{ "Dezembro, " }}
+  {{ end }}
+{{ end }}
+
+{{ .Format "2006" }}

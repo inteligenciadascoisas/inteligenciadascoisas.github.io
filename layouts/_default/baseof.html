@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+<!-- Page Header -->
+{{ block "header" .}}
+<!-- <header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | relURL }}')"> -->
+
+<div id="particles-js"></div>
+<header class="intro-header"
+    style="background: rgb(173,205,223); background: linear-gradient(90deg, rgba(173,205,223,1) 0%, rgba(222,235,242,1) 30%, rgba(222,235,242,1) 70%, rgba(173,205,223,1) 100%);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading" style="padding: 50px;">
+                    <div class="row">
+                        {{ with .Site.Params.logo_svg }}
+                            <img src="{{ . | relURL }}" alt="" style="width: 60%;">
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{{ end }}
+
+{{ block "main" . }}
+{{ end }}
+
+{{ partial "footer.html" . }}
+
+{{ partial "header_effect.html" . }}
+    <!-- Custom JS -->
+    {{ range .Site.Params.custom_js }}
+    <script src="{{ . | absURL }}"></script>
+    {{ end }}
+</body>
+
+</html>
